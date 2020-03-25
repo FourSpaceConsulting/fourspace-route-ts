@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
@@ -18,7 +19,7 @@
   "files": [
     "lib/**/*"
   ],
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/FourSpaceConsulting/fourspace-route-ts.git"
   },
@@ -33,6 +34,7 @@
     "@types/jest": "^25.1.4",
     "jest": "^25.1.0",
     "prettier": "^2.0.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^25.2.1",
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
